@@ -1,52 +1,12 @@
-# flask-pymongo-example
+# flask-app
 
-```
-$$$$$$$$\ $$\                     $$\               $$$$$$$\            $$\      $$\                                               
-$$  _____|$$ |                    $$ |              $$  __$$\           $$$\    $$$ |                                              
-$$ |      $$ | $$$$$$\   $$$$$$$\ $$ |  $$\         $$ |  $$ |$$\   $$\ $$$$\  $$$$ | $$$$$$\  $$$$$$$\   $$$$$$\   $$$$$$\        
-$$$$$\    $$ | \____$$\ $$  _____|$$ | $$  |$$$$$$\ $$$$$$$  |$$ |  $$ |$$\$$\$$ $$ |$$  __$$\ $$  __$$\ $$  __$$\ $$  __$$\       
-$$  __|   $$ | $$$$$$$ |\$$$$$$\  $$$$$$  / \______|$$  ____/ $$ |  $$ |$$ \$$$  $$ |$$ /  $$ |$$ |  $$ |$$ /  $$ |$$ /  $$ |      
-$$ |      $$ |$$  __$$ | \____$$\ $$  _$$<          $$ |      $$ |  $$ |$$ |\$  /$$ |$$ |  $$ |$$ |  $$ |$$ |  $$ |$$ |  $$ |      
-$$ |      $$ |\$$$$$$$ |$$$$$$$  |$$ | \$$\         $$ |      \$$$$$$$ |$$ | \_/ $$ |\$$$$$$  |$$ |  $$ |\$$$$$$$ |\$$$$$$  |      
-\__|      \__| \_______|\_______/ \__|  \__|        \__|       \____$$ |\__|     \__| \______/ \__|  \__| \____$$ | \______/       
-                                                              $$\   $$ |                                 $$\   $$ |                
-                                                              \$$$$$$  |                                 \$$$$$$  |                
-                                                               \______/                                   \______/                 
-       $$$\                                                                                                                        
-      $$ $$\                                                                                                                       
-      \$$$\ |                                                                                                                      
-      $$\$$\$$\                                                                                                                    
-      $$ \$$ __|                                                                                                                   
-      $$ |\$$\                                                                                                                     
-       $$$$ $$\                                                                                                                    
-       \____\__|                                                                                                                   
-                                                                                                                                   
-                                                                                                                                   
-                                                                                                                                   
-$$\      $$\                                         $$$$$$$\  $$$$$$$\         $$$$$$\    $$\     $$\                             
-$$$\    $$$ |                                        $$  __$$\ $$  __$$\       $$  __$$\   $$ |    $$ |                            
-$$$$\  $$$$ | $$$$$$\  $$$$$$$\   $$$$$$\   $$$$$$\  $$ |  $$ |$$ |  $$ |      $$ /  $$ |$$$$$$\   $$ | $$$$$$\   $$$$$$$\         
-$$\$$\$$ $$ |$$  __$$\ $$  __$$\ $$  __$$\ $$  __$$\ $$ |  $$ |$$$$$$$\ |      $$$$$$$$ |\_$$  _|  $$ | \____$$\ $$  _____|        
-$$ \$$$  $$ |$$ /  $$ |$$ |  $$ |$$ /  $$ |$$ /  $$ |$$ |  $$ |$$  __$$\       $$  __$$ |  $$ |    $$ | $$$$$$$ |\$$$$$$\          
-$$ |\$  /$$ |$$ |  $$ |$$ |  $$ |$$ |  $$ |$$ |  $$ |$$ |  $$ |$$ |  $$ |      $$ |  $$ |  $$ |$$\ $$ |$$  __$$ | \____$$\         
-$$ | \_/ $$ |\$$$$$$  |$$ |  $$ |\$$$$$$$ |\$$$$$$  |$$$$$$$  |$$$$$$$  |      $$ |  $$ |  \$$$$  |$$ |\$$$$$$$ |$$$$$$$  |        
-\__|     \__| \______/ \__|  \__| \____$$ | \______/ \_______/ \_______/       \__|  \__|   \____/ \__| \_______|\_______/         
-                                 $$\   $$ |                                                                                        
-                                 \$$$$$$  |                                                                                        
-                                  \______/                                                                                         
-```
-## Introduction
-
-Implementation of flask and pymongo using mflix sample data set and mflix python UI
-
-This is a short guide on how to integrated MongoDB Atlas to Flask applications using Flask-PyMongo wrapper and pymongo driver.
 
 ## Project Structure
 
-The `mflix` directory holds the application logic.
+The `helpmate` directory holds the application logic.
 
 - `db.py` Where all database CRUD patterns are exposed as functions.
-- `api/movies.py`  Where the web api is exposed to the UI
+- `api/*.py`  Where the web api is exposed to the UI
 
 The main directory holds the following files:
 - `run.py` Where the Flask application is initialize and the config is loaded
@@ -57,19 +17,19 @@ The main directory holds the following files:
 
 Clone the repository.
 ```
-git clone git@github.com:mongodb-developer/flask-pymongo-example.git
+https://github.com/MalakaRodrigo/helpmate.git
 ```
 
 Start a python virtual env:
 ```
-# navigate to the flask-pymongo-example directory
-cd flask-pymongo-example
+# navigate to the helpmate directory
+cd helpmate
 
 # create the virtual environment for MFlix
-python3 -m venv mflix-venv
+python3 -m venv helpmate-venv
 
 # activate the virtual environment
-source mflix_venv/bin/activate
+source helpmate_venv/bin/activate
 ```
 
 Install dependencies
