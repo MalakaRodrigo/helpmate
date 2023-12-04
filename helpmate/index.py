@@ -1,11 +1,14 @@
 import os
-from flask import Flask, render_template
+from flask import Flask
 from json import JSONEncoder
 from flask_cors import CORS
 from flask_jwt_extended import JWTManager
 from bson import json_util, ObjectId
 from datetime import datetime
 from helpmate.api.routes.userRoutes import users_api_v1
+from helpmate.api.routes.videoRoutes import videos_api_v1
+from helpmate.api.routes.taskRoutes import tasks_api_v1
+
 
 # Custom JSON Encoder to handle special types (datetime, ObjectId)
 class MongoJsonEncoder(JSONEncoder):
@@ -21,14 +24,14 @@ class MongoJsonEncoder(JSONEncoder):
 def create_app():
     # Define directory paths
     APP_DIR = os.path.abspath(os.path.dirname(__file__))
-    STATIC_FOLDER = os.path.join(APP_DIR, 'build/static')
-    TEMPLATE_FOLDER = os.path.join(APP_DIR, 'build')
+    STATIC_FOLDER = os.path.join(APP_DIR, "build/static")
+    TEMPLATE_FOLDER = os.path.join(APP_DIR, "build")
 
     # Create the Flask app
     app = Flask(__name__, static_folder=STATIC_FOLDER, template_folder=TEMPLATE_FOLDER)
 
     # Enable Cross-Origin Resource Sharing (CORS)
-    CORS(app)
+    CORS(app, resources={r"/api/*": {"origins": "*"}})
 
     # Configure JWT (JSON Web Tokens) for authentication
     JWTManager(app)
@@ -38,6 +41,8 @@ def create_app():
 
     # Register API routes
     app.register_blueprint(users_api_v1)
+    app.register_blueprint(videos_api_v1)
+    app.register_blueprint(tasks_api_v1)
 
     # Uncomment the following lines if you want to serve a single-page app (React, Angular, etc.)
     # This will serve the 'index.html' file for all routes, enabling client-side routing

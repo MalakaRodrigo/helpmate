@@ -14,4 +14,4 @@ if __name__ == "__main__":
     app.config['JWT_SECRET_KEY'] = config['TEST']['JWT_SECRET_KEY']
     app.config['MONGO_URI'] = config['TEST']['DB_URI']
 
-    app.run()
+    app.run(host='localhost', port=5000)
